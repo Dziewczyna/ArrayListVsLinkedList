@@ -11,7 +11,7 @@ public class ArrayListVsLinkedList {
     // CRUD
     // Create
     System.out.println("--CREATE--");
-      System.out.println("ArrayList");
+    System.out.println("ArrayList");
     addElementsToList(arrayList);
 
     System.out.println("LinkedList");
@@ -49,7 +49,7 @@ public class ArrayListVsLinkedList {
     }
     long finish = System.currentTimeMillis();
     long timeElapsed = finish - start;
-    System.out.println("Create time in miliseconds: "+timeElapsed);
+    System.out.println("Create time in miliseconds: " + timeElapsed);
     return list;
   }
 
@@ -60,7 +60,7 @@ public class ArrayListVsLinkedList {
     }
     long finish = System.currentTimeMillis();
     long timeElapsed = finish - start;
-    System.out.println("Edit time in miliseconds: "+timeElapsed);
+    System.out.println("Edit time in miliseconds: " + timeElapsed);
     return list;
   }
 
@@ -71,20 +71,17 @@ public class ArrayListVsLinkedList {
     }
     long finish = System.currentTimeMillis();
     long timeElapsed = finish - start;
-    System.out.println("Read time in miliseconds: "+timeElapsed);
+    System.out.println("Read time in miliseconds: " + timeElapsed);
   }
 
   public static List<String> removeElementsFromList(List<String> list) {
     long start = System.currentTimeMillis();
-    for (int i = 0; i < 10000; i++) {
-      list.remove(0);
-      //https://stackoverflow.com/questions/52995104/exception-when-removing-elements-from-arraylist
-      //list.remove(i);
-    }
+
+    // https://stackoverflow.com/questions/52995104/exception-when-removing-elements-from-arraylist
+    list.removeAll(list);
     long finish = System.currentTimeMillis();
     long timeElapsed = finish - start;
-    System.out.println("Remove time in miliseconds: "+timeElapsed);
+    System.out.println("Remove time in miliseconds: " + timeElapsed);
     return list;
   }
-
 }
